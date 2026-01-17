@@ -14,14 +14,16 @@ import {
   getDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
+// Firebase configuration - API keys should be stored in backend
+// For now, fetch from a config endpoint or use environment variables
 const firebaseConfig = {
-  apiKey: "***REMOVED***",
-  authDomain: "myauthapp-c9382.firebaseapp.com",
-  projectId: "myauthapp-c9382",
-  storageBucket: "myauthapp-c9382.appspot.com",
-  messagingSenderId: "972508198171",
-  appId: "***REMOVED***",
-  measurementId: "G-3GKSESXV7S"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "myauthapp-c9382.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "myauthapp-c9382",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "myauthapp-c9382.appspot.com",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "972508198171",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-3GKSESXV7S"
 };
 
 // Initialize Firebase
